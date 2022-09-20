@@ -17,10 +17,7 @@ const ItemList = (props) => {
         {props.items.map((item) => {
           return (
             <div className="col-sm-4 pb-2" key={item.slug}>
-              <ItemPreview
-                item={item}
-                image={item.image === "" ? "placeholder.png" : item.image}
-              />
+              <ItemPreview item={item} />
             </div>
           );
         })}
