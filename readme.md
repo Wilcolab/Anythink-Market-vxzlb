@@ -10,4 +10,8 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+Check docker is installed properly with: "docker -v" & "docker-compose -v"
+
+Run "docker-compose" up in the project root directory
+
+Test by visiting: http://localhost:3000/api/ping you should see the Pong all is working massage
