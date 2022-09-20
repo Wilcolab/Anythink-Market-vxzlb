@@ -1,6 +1,6 @@
-import ItemPreview from "./ItemPreview";
-import ListPagination from "./ListPagination";
-import React from "react";
+import ItemPreview from './ItemPreview';
+import ListPagination from './ListPagination';
+import React from 'react';
 
 const ItemList = (props) => {
   if (!props.items) {
@@ -9,6 +9,10 @@ const ItemList = (props) => {
 
   if (props.items.length === 0) {
     return <div className="py-4 no-items">No items are here... yet.</div>;
+  }
+
+  if (props.items.image === '') {
+    props.items.image = 'placeholder.png';
   }
 
   return (
@@ -23,11 +27,7 @@ const ItemList = (props) => {
         })}
       </div>
 
-      <ListPagination
-        pager={props.pager}
-        itemsCount={props.itemsCount}
-        currentPage={props.currentPage}
-      />
+      <ListPagination pager={props.pager} itemsCount={props.itemsCount} currentPage={props.currentPage} />
     </div>
   );
 };
