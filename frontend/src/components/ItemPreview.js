@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import agent from '../agent';
-import { connect } from 'react-redux';
-import { ITEM_FAVORITED, ITEM_UNFAVORITED } from '../constants/actionTypes';
+import React from "react";
+import { Link } from "react-router-dom";
+import agent from "../agent";
+import { connect } from "react-redux";
+import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -30,8 +30,16 @@ const ItemPreview = (props) => {
   };
 
   return (
-    <div className="card bg-dark border-light p-3" style={{ borderRadius: '20px' }}>
-      <img alt="item" src={item.image || 'placeholder.png'} className="card-img-top item-img" style={{ borderRadius: '20px' }} />
+    <div
+      className="card bg-dark border-light p-3"
+      style={{ borderRadius: "20px" }}
+    >
+      <img
+        alt="item"
+        src={item.image || "placeholder.png"}
+        className="card-img-top item-img"
+        style={{ borderRadius: "20px" }}
+      />
       <div className="card-body">
         <Link to={`/item/${item.slug}`} className="text-white">
           <h3 className="card-title">{item.title}</h3>
@@ -39,7 +47,11 @@ const ItemPreview = (props) => {
         </Link>
         <div className="d-flex flex-row align-items-center pt-2">
           <Link to={`/@${item.seller.username}`} className="flex-grow-1">
-            <img src={item.seller.image} alt={item.seller.username} className="user-pic rounded-circle pr-1" />
+            <img
+              src={item.seller.image}
+              alt={item.seller.username}
+              className="user-pic rounded-circle pr-1"
+            />
           </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
